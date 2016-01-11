@@ -17,10 +17,12 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+// Espen changing vcap to run on bluemix dedicated... CUPS service...
+// cf cups s_name -p '{"name":"","username":"","password":"","hostname":""}' 
 
 $vcap = getenv("VCAP_SERVICES");
 $data = json_decode($vcap, true);
-$creds = $data['cleardb'][0]['credentials'];
+$creds = $data['user-provided'][0]['credentials']['credentials'];
 define('DB_NAME', $creds['name']);
 
 /** MySQL database username */
