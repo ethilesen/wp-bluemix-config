@@ -22,7 +22,7 @@
 
 $vcap = getenv("VCAP_SERVICES");
 $data = json_decode($vcap, true);
-$creds = $data['user-provided'][0]['myClearDB']['credentials']['credentials'];
+$creds = $data['user-provided'][0]['credentials']['credentials'];
 define('DB_NAME', $creds['name']);
 
 /** MySQL database username */
