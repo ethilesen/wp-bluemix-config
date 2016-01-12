@@ -23,7 +23,7 @@
 $vcap = getenv("VCAP_SERVICES");
 $data = json_decode($vcap, true);
 $creds = $data['user-provided'][0]['credentials']['credentials'];
-console.log("vcap: ", data);
+console.log('vcap: ',  $creds['name']);
 define('DB_NAME', $creds['name']);
 
 /** MySQL database username */
